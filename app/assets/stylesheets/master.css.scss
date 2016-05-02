@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+
 .booyah-box {
   -moz-box-shadow: 1px 1px 2px 0 #d0d0d0;
   -webkit-box-shadow: 1px 1px 2px 0 #d0d0d0;
@@ -16,6 +18,12 @@
   box-shadow: 2px 8px 5px grey;
 }
 
+.navbar-inverse .navbar-brand {
+  color: #35B2DB;
+  font-family: 'gooddogregular', sans-serif;
+  font-size:30px;
+}
+
 body{
   background: url('/assets/whitey.png');
   /* Verdana-based sans serif stack */
@@ -28,3 +36,4 @@ h1, h2, h3, h4, h5, h6 {
   margin:0;
   padding:0;
 }
+
