@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+# Adds kaminari pagination
+gem 'kaminari'
+
 # Adds 'bootstrap-sass'
 gem 'bootstrap-sass', '~> 3.3.5.1'
 gem 'sprockets', '2.11.0'
