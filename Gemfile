@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+# adds 'devise user authentication'
+gem 'devise', '>= 3.2.4'
+
 # Adds kaminari pagination
 gem 'kaminari'
 
