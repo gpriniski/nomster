@@ -1,6 +1,6 @@
 <div class="booyah-box col-xs-10 col-xs-offset-1">
 
-  <h2>Log in</h2>
+  <h2>Sign in</h2>
   <br />
   <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="form-inputs">
@@ -13,7 +13,7 @@
       <%= f.button :submit, "Log in", class: 'btn btn-primary' %>
     </div>
   <% end %>
-  <br />
+  <br/ >
 
-<%= render "devise/shared/links" %>
+  <%= render "devise/shared/links" %>
 </div>
