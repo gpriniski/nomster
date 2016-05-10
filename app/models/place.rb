@@ -1,7 +1,7 @@
 class Place < ActiveRecord::Base
   belongs_to :user
   
-  geocode_by :address
+  geocoded_by :address
   after_validation :geocode
 
   validates :name, presence: true, uniqueness: true, length: { :within => 3..30 }
