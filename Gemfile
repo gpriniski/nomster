@@ -1,5 +1,11 @@
 source 'https://rubygems.org'
 
+# Adds figaro
+gem "figaro", ">= 1.0.0"
+
+# Adds gmecoder
+gem "geocoder"
+
 # adds 'devise user authentication'
 gem 'devise', '>= 3.2.4'
 

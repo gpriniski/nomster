@@ -1,8 +1,14 @@
 class Place < ActiveRecord::Base
   belongs_to :user
+  
+  geocode_by :address
+  after_validation :geocode
+
   validates :name, presence: true, uniqueness: true, length: { :within => 3..30 }
   validates :address, presence: true, length: { :within => 3..100 }
   validates :description, presence: true, length: { :within => 3..500 }
+
+
 end
 
  #class Film <; ActiveRecord::Base
