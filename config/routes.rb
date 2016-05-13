@@ -6,6 +6,7 @@ Nomster::Application.routes.draw do
   # Part of project. Add standard resources for places.
   resources :places do
     resources :comments, only: :create
+    resources :photos, only: :create
   end
 
   

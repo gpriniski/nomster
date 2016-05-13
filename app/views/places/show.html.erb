@@ -1,12 +1,14 @@
+<!----------------- Place page layout ------------------>
+
 <div class="booyah-box col-xs-10 col-xs-offset-1">
   <h1><%= @place.name %></h1>
   <i><%= @place.address %></i>
   <br /><br />
   <p><%= @place.description %></p>
 
+<!----------------- Display place on Google Maps ------------------>
 
 <% if @place.latitude.present? && @place.longitude.present? %>
-   
 <script>
 
 function initMap() {
@@ -32,6 +34,8 @@ function initMap() {
 <% end %>
 <br />
 
+<!----------------- Place user Edit and Delete ------------------>
+
   <div class="pull-right">
     <% if current_user && current_user == @place.user %>
       <%= link_to 'Edit', edit_place_path(@place), class: 'btn btn-primary' %>
@@ -42,10 +46,8 @@ function initMap() {
 
 <div class="clear"></div>
 
+<!----------------------- Comment Modal ---------------------------------------->
 
-
-
-<!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -70,13 +72,28 @@ function initMap() {
 <div class="col-xs-10 col-xs-offset-1">
   <h1 class="pull-left">Comments</h1>
 
-  <!-- Button trigger modal -->
+  <!-- -------------------------------- Comment Button trigger modal ------------------------------>
+
   <button class="btn btn-primary btn-lg pull-right" data-toggle="modal" data-target="#myModal">
     Add a comment
-  </button>
+ </button>
 </div>
 
 <div class="clear"></div>
+
+<!-- -------------------------------------------Photo Form ----------------------------------------- -->
+
+<%= simple_form_for @photo, url: place_photos_path(@place) do |f| %>
+  <%= f.input :caption %>
+  <%= f.input :picture %>
+  <%= f.submit "Add Photo", class: 'btn btn-primary' %>
+<% end %>
+
+
+  <!-- ----------------------------------------------Photo Button trigger modal---------------------- -->
+
+
+ <!-- --------------------------------------------  Display comments ---------------------- -->
 
 <%= @place.comments.each do |comment| %>
   <div class="col-xs-12 col-sm-6">
@@ -89,3 +106,10 @@ function initMap() {
     </blockquote>
   </div>
   <% end %>
+
+  <!-- --------------------------------------------  Display photos ---------------------- -->
+
+<%= @place.photos.each do |photo| %>
+    <%= image_tag photo.picture %>
+    <%= photo.caption %>
+<% end %>

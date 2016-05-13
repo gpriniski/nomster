@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+# Adds carrierwave
+gem 'carrierwave'
+
 # Adds figaro
 gem "figaro", ">= 1.0.0"
 
