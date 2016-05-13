@@ -1,29 +1,28 @@
 source 'https://rubygems.org'
 
-# Adds carrierwave
+
+
+# Added for Nomster Project
+gem "fog", "~> 1.3.1"
+
 gem 'carrierwave'
 
-# Adds figaro
 gem "figaro", ">= 1.0.0"
 
-# Adds gmecoder
 gem "geocoder"
 
-# adds 'devise user authentication'
 gem 'devise', '>= 3.2.4'
 
-# Adds kaminari pagination
 gem 'kaminari'
 
-# Adds 'bootstrap-sass'
 gem 'bootstrap-sass', '~> 3.3.5.1'
 gem 'sprockets', '2.11.0'
 gem 'sass-rails'
-# Adds 'simple-form'
+
 gem 'simple_form'
 
-# Adds 'rails_12factor'
 gem 'rails_12factor', group: :production
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.1'
