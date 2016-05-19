@@ -20,8 +20,8 @@
     <h2 class="text-center"><%= link_to comment.place.name, place_path(comment.place) %></h2>
 
     <blockquote>
-      <% if comment.humanized_rating.present? %>
-        <b><%= comment.humanized_rating %></b> -
+      <% if comment.humanize_rating.present? %>
+        <b><%= comment.humanize_rating %></b> -
       <% end %>
       <%= comment.message %>
       <small><%= comment.user.email %></small>
