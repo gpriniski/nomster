@@ -6,6 +6,11 @@
   <br /><br />
   <p><%= @place.description %></p>
 
+  <% if @place.user.present? %>
+    <small><%= @place.user.email %></small>
+  <% end %>
+
+
 <!----------------- Display place on Google Maps ------------------>
 
 <% if @place.latitude.present? && @place.longitude.present? %>
@@ -111,7 +116,7 @@ function initMap() {
 
  <!-- --------------------------------------------  Display comments ---------------------- -->
 
-<%= @place.comments.each do |comment| %>
+<% @place.comments.each do |comment| %>
   <div class="col-xs-12 col-sm-6">
     <blockquote>
     <% if comment.humanize_rating.present? %>
@@ -132,7 +137,7 @@ function initMap() {
 </div>
 <br />
 
-<%= @place.photos.each do |photo| %>
+<% @place.photos.each do |photo| %>
   <div class="photo col-xs-12 col-sm-6">
     <%= image_tag photo.picture, :class => "img-responsive" %>
     <%= photo.caption %>
